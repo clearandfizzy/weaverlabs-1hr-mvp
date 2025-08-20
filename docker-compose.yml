@@ -1,0 +1,18 @@
+services:
+  react-app-weaver:
+    build: .
+    container_name: react-app-weaver
+    tty: true
+    volumes:
+      - ./server:/app:delegated
+    ports:
+      - '5173:5173'
+      - '3000:3000'
+      - '9005:9005'
+      - '4000:4000'
+      - "4500:4500"
+      - "9150:9150"
+      - "9099:9099"
+      - "8081:8081"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
